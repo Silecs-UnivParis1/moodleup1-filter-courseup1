@@ -24,8 +24,12 @@ class filter_courseup1 extends moodle_text_filter {
                     if (empty($params['node'])) {
                         $replace = "<p>Erreur [course$format] : le paramètre requis 'node' n'est pas présent.</p>";
                     } else if (courselist_common::get_courses_from_pseudopath($params['node'])) {
-                        $widget_url =  new moodle_url('/local/mwscoursetree/widget.js');
-                        $script = '<script type="text/javascript" src="' . $widget_url . '"></script>';
+                        $scriptJquery = sprintf('<script type="text/javascript" src="%s"></script>',
+                            new moodle_url('/local/jquery/jquery.js'));
+                        $scriptTree = sprintf('<script type="text/javascript" src="%s"></script>',
+                            new moodle_url('/local/mwscoursetree/assets/tree.jquery.js'));
+                        $script = sprintf('<script type="text/javascript" src="%s"></script>',
+                            new moodle_url('/local/mwscoursetree/widget.js'));
                         $div = '<div class="coursetree" data-root="' . $params['node'] .'"></div>';
                         $replace = $div . $script;
                     } else {
