@@ -10,8 +10,8 @@
 
 defined('MOODLE_INTERNAL') || die();
 
-$plugin->version   = 2020120700;        // The current plugin version (Date: YYYYMMDDXX)
-$plugin->requires  = 2020060900;        // Requires this Moodle version
+$plugin->version   = 2024112800;        // The current plugin version (Date: YYYYMMDDXX)
+$plugin->requires  = 2024100700;        // Requires this Moodle version 4.5
 $plugin->component = 'filter_courseup1';       // Full name of the plugin (used for diagnostics)
 $plugin->cron      = 0;
 $plugin->maturity  = MATURITY_ALPHA;
