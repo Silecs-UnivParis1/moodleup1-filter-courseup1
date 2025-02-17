@@ -24,7 +24,7 @@ class text_filter extends \core_filters\text_filter {
                         $replace = "<p>Erreur [course$format] : le paramètre requis 'node' n'est pas présent.</p>";
                     } else if (\courselist_common::get_courses_from_pseudopath($params['node'])) {
                         $scriptJquery = sprintf('<script type="text/javascript" src="%s"></script>',
-                            new \moodle_url('/local/jquery/jquery.js'));
+                            new \moodle_url('/local/jquery/jquery-moodle.js'));
                         $scriptTree = sprintf('<script type="text/javascript" src="%s"></script>',
                             new \moodle_url('/local/mwscoursetree/assets/tree.jquery.js'));
                         $script = sprintf('<script type="text/javascript" src="%s"></script>',
